@@ -8,6 +8,8 @@ from utils import check_password, hash_password # 비밀번호 암호화
 from flask_jwt_extended import create_access_token, get_jwt, jwt_required # login 연장기능 섞여있음
 import datetime
 
+
+### 회원가입
 class UserRegisterResource(Resource):
     
     def post(self):
@@ -130,7 +132,7 @@ class UserLoginResource(Resource):
         return {'result':'success', 'access_token': access_token }
     
 
-## 로그아웃
+### 로그아웃
 # 로그아웃된 토큰을 저장할 set을 만든다.
 jwt_blocklist= set()
 class UserLogoutResource(Resource):

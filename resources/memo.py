@@ -17,7 +17,7 @@ from mysql_connection import get_connection
 # flask_restful 라이브러리의 Resource class를 상속해서 생성.
 
 
-class FollowMemoListResource(Resource):
+class FollowMemoListResource(Resource): #
     @jwt_required()
     def get(self):
         # 1. 클라이언트로부터 데이터를 받아온다.(body는 request.get_json())
@@ -66,9 +66,9 @@ class FollowMemoListResource(Resource):
         
         return {'result' : 'success', 'count':len(result_list), 'item' : result_list}
 
-
-class MemoResource(Resource): # 메모 수정
-    @jwt_required()
+ # 메모 수정 및 삭제
+class MemoResource(Resource):
+    @jwt_required() # 메모 수정
     def put(self, memo_id):
         data= request.get_json()
         
@@ -95,7 +95,7 @@ class MemoResource(Resource): # 메모 수정
         return {"result":"success"}
     
     
-    @jwt_required()
+    @jwt_required() # 메모 삭제
     def delete(self, memo_id):
         # 1. 클라이언트로부터 데이터를 받아온다.
         print(memo_id)
