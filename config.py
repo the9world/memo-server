@@ -2,8 +2,8 @@
 class Config: # MySQL Connection 만들때 처럼 HostName 등을 입력한다.
 # 변수 이름은 사용자가 정의한다.
     HOST = 'mydb.codwds0bctbl.ap-northeast-2.rds.amazonaws.com'
-    DATABASE = 'memo_db2'
-    DB_USER = 'memo_db_user2'
+    DATABASE = 'memo_db'
+    DB_USER = 'memo_db_user'
     DB_PASSWORD = '3885'
 
     # 비번 암호화 : seed, SALT, Randomstate
