@@ -6,7 +6,7 @@ from mysql_connection import get_connection
 from email_validator import validate_email, EmailNotValidError # emaill 체크
 from utils import check_password, hash_password # 비밀번호 암호화
 from flask_jwt_extended import create_access_token, get_jwt, jwt_required # login 연장기능 섞여있음
-import datetime
+
 
 
 ### 회원가입
@@ -68,6 +68,7 @@ class UserRegisterResource(Resource):
             connection.commit() # DB에 적용하라.
             
             ### DB에 데이터를 insert 한 후에 insert된 행의 ID를 가져오는 코드!!
+            # 회원가입 시 user_id가 노출되지 않게 인증토큰이 필요해, 클라이언트에게 보내줘야함
             user_id= cursor.lastrowid # id값이 증가(AI)된 것을 가져와라..?
             
             cursor.close()

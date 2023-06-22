@@ -5,7 +5,7 @@ from config import Config
 # 1. 원문 비밀번호를, 단방향으로 암호화 하는 함수
 def hash_password(original_password):
     password = pbkdf2_sha256.hash(original_password + Config.SALT)
-    # config.salt 변수는  config 파일에 seed, randomstate
+    # Config.SALT는 config.py에 SALT변수: 비번 암호화를 적용하는 것 : seed, SALT, Randomstate
     return password
 
 # 2. 유저가 입력한 비밀번호가 맞는지 체크하는 함수

@@ -11,7 +11,7 @@ app= Flask(__name__) # 여기도 F:대문자
 print('app 변수 생성') # 디버깅용
 
 # 환경변수 세팅
-app.config.from_object(Config)
+app.config.from_object(Config) # config.py class config 상속(?)받음
 
         # JWT 매니저 초기화
 # Flask-JWT-Extended 확장에 대한
